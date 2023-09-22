@@ -27,7 +27,7 @@ public class constrain {
         this.b1 = b1;
     }
 
-    public float getA1() {
+    public float getA1() { 
         return a1;
     }
 
@@ -52,4 +52,24 @@ public class constrain {
     }
     
     
+    public point2D getp1(){
+        point2D p1 = new point2D();
+        if (a1 != 0.0f && a2 != 0.0f && b1!= 0f){
+            //caso 1: p1 (x1 = 0, ??) & p2 (x1=x1max,??)
+            p1.setX1(0);
+            p1.setX2(b1/a2);
+        }
+        return p1;
+    }
+    
+    public point2D getp2(){
+        point2D p2 = new point2D();
+        if (a1 != 0.0f && a2 != 0.0f && b1!= 0f){
+            //caso 1: p1 (x1 = 0, ??) & p2 (x1=x1max,??)
+            p2.setX1(xmax);
+            p2.setX2((b1 - a1*coordinate.xmax)/a2);
+        }
+        return p2;
+    }
+
 }
